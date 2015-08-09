@@ -8,13 +8,13 @@
 Summary:	Test::CPAN::Changes - Validation of the Changes file in a CPAN distribution
 Summary(pl.UTF-8):	Test::CPAN::Changes - sprawdzanie poprawności pliku Changes w dystrybucji CPAN
 Name:		perl-CPAN-Changes
-Version:	0.20
+Version:	0.400002
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/CPAN/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	c0ddffe90c507752b15f28329294c51b
+# Source0-md5:	5773d51abaafd37c6bcdde3827873075
 URL:		http://search.cpan.org/dist/CPAN-Changes/
 BuildRequires:	perl-devel >= 1:5.10.0
 BuildRequires:	rpm-perlprov >= 4.1-13
