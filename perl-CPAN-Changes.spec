@@ -19,10 +19,12 @@ URL:		http://search.cpan.org/dist/CPAN-Changes/
 BuildRequires:	perl-devel >= 1:5.10.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
+BuildRequires:	perl(Text::Wrap) >= 0.96
 BuildRequires:	perl-ExtUtils-MakeMaker >= 6.59
-BuildRequires:	perl-Test-Simple
-BuildRequires:	perl-version >= 0.79
+BuildRequires:	perl-Test-Simple >= 0.96
+BuildRequires:	perl-version >= 0.9906
 %endif
+Requires:	perl-version >= 0.9906
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
