@@ -4,7 +4,6 @@
 #
 %define		pdir	CPAN
 %define		pnam	Changes
-%include	/usr/lib/rpm/macros.perl
 Summary:	Test::CPAN::Changes - Validation of the Changes file in a CPAN distribution
 Summary(pl.UTF-8):	Test::CPAN::Changes - sprawdzanie poprawności pliku Changes w dystrybucji CPAN
 Name:		perl-CPAN-Changes
