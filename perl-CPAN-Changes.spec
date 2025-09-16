@@ -1,26 +1,33 @@
 #
 # Conditional build:
-%bcond_without	tests		# do not perform "make test"
+%bcond_without	tests	# unit tests
 #
 %define		pdir	CPAN
 %define		pnam	Changes
 Summary:	Test::CPAN::Changes - Validation of the Changes file in a CPAN distribution
 Summary(pl.UTF-8):	Test::CPAN::Changes - sprawdzanie poprawności pliku Changes w dystrybucji CPAN
 Name:		perl-CPAN-Changes
-Version:	0.400002
+Version:	0.500005
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/CPAN/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	5773d51abaafd37c6bcdde3827873075
-URL:		http://search.cpan.org/dist/CPAN-Changes/
+Source0:	https://www.cpan.org/modules/by-module/CPAN/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	1a1a33268e7073642e654b36c99f8d57
+URL:		https://metacpan.org/dist/CPAN-Changes
+BuildRequires:	perl-ExtUtils-MakeMaker
 BuildRequires:	perl-devel >= 1:5.10.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpmbuild(macros) >= 1.745
 %if %{with tests}
 BuildRequires:	perl(Text::Wrap) >= 0.96
 BuildRequires:	perl-ExtUtils-MakeMaker >= 6.59
+BuildRequires:	perl-Module-Runtime
+BuildRequires:	perl-Moo >= 1.006000
+BuildRequires:	perl-Sub-Quote >= 1.005000
 BuildRequires:	perl-Test-Simple >= 0.96
+# Types::Standard
+BuildRequires:	perl-Type-Tiny
 BuildRequires:	perl-version >= 0.9906
 %endif
 Requires:	perl-version >= 0.9906
@@ -41,6 +48,7 @@ zgodność plików logów zmian ze specyfikacją.
 %build
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
+
 %{__make}
 
 %{?with_tests:%{__make} test}
